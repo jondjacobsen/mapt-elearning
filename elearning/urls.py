@@ -18,8 +18,7 @@ from django.contrib import admin
 
 from rest_framework import routers
 
-from courses.views import (course_add, course_detail, course_list, do_section,
-                           do_test, show_results, SectionViewSet)
+from courses.views import course_add, course_detail, course_list, do_section, do_test, show_results, SectionViewSet
 from students.views import student_detail, UserViewSet
 from api.views import UserViewSet
 
