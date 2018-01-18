@@ -32,7 +32,7 @@ else:
     DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://afternoon-scrubland-40148.herokuapp.com/',
+    'https://infinite-brushlands-68283.herokuapp.com/',
     'localhost',
 ]
 
