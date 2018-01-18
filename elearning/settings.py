@@ -32,10 +32,7 @@ if DEBUG in ['Off', 'off', 'No', 'no', 'False', 'false', '0', '']:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = [
-    'https://infinite-brushlands-68283.herokuapp.com/',
-    'localhost',
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
