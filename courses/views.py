@@ -53,10 +53,9 @@ def do_test(request, section_id):
 	        answer_id = request.POST.get(key)
 	        data[question_id] = answer_id
 		perform_test(request.user, data, section)
-        return redirect(reverse('show_results', args=(section.id,)))
-    return render(request, 'courses/do_test.html', {
-        'section': section,
-    })
+    	return redirect(reverse('show_results', args=(section.id,)))
+	return render(request, 'courses/do_test.html', {'section': section, }
+		)
 
 def perform_test(user, data, section):
 	with transaction.atomic():
@@ -92,14 +91,14 @@ def show_results(request, section_id):
 	})
 
 class SectionViewSet(viewsets.ModelViewSet):
-    queryset = Section.objects.all()
-    serializer_class = SectionSerializer
+	queryset = Section.objects.all()
+	serializer_class = SectionSerializer
 
-    @detail_route(methods=['GET', ])
-    def questions(self, request, *args, **kwargs):
-        section = self.get_object()
-        data = []
-        for question in section.question_set.all():
+	@detail_route(methods=['GET', ])
+	def questions(self, request, *args, **kwargs):
+    	section = self.get_object()
+    	data = []
+    	for question in section.question_set.all():
             question_data = {'id': question.id, 'answers': []}
             for answer in question.answer_set.all():
                 answer_data = {'id': answer.id, 'text': str(answer), }
