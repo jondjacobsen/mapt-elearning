@@ -52,7 +52,7 @@ def do_test(request, section_id):
 	        question_id = key.split('-')[1]
 	        answer_id = request.POST.get(key)
 	        data[question_id] = answer_id
-		perform_test(request.user, data, section)
+			perform_test(request.user, data, section)
     	return redirect(reverse('show_results', args=(section.id,)))
 	return render(request, 'courses/do_test.html', {'section': section, }
 		)
